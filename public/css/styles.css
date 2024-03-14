@@ -5372,3 +5372,8 @@ body.search-is-visible .s-header__search-inner {
 .entry__thumb {
     border-radius: 23px!important;
 }
+
+.logoNav {
+    width: 32px;
+    height: 33px;
+}
