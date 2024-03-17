@@ -7,7 +7,7 @@
     ================================================== -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Chimchic | |</title>
+    <title>CHIM~CHIC BEAUTY | |</title>
 
     <script>
         document.documentElement.classList.remove('no-js');
@@ -25,7 +25,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="./images/logochimchic.jpeg">
     <link rel="icon" type="image/png" sizes="16x16" href="./images/logochimchic.jpeg">
     <link rel="manifest" href="site.webmanifest">
-
+    <script src="https://cdn.fedapay.com/checkout.js?v=1.1.7"></script>
 </head>
 
 
@@ -70,8 +70,8 @@
                         <li class="current-menu-item"><a href="index.html" title="">Home</a></li>
                         <li class="has-children">
                             <a href="#0" title="" class="">Categories</a>
-                            <ul class="sub-menu">
-                                <li><a href="">Design</a></li>
+                            <ul id="embed" class="sub-menu">
+                                <li><a id="pay-btn" href="#">Design</a></li>
                                 <li><a href="">Lifestyle</a></li>
                                 <li><a href="">Inspiration</a></li>
                                 <li><a href="">Work</a></li>
@@ -472,7 +472,44 @@
                 </div> <!-- end masonry-->
 
 
+
+                <form name="cForm" id="cForm" class="entry__form" method="post" action=""
+                                    autocomplete="off">
+                                    <fieldset class="row">
+
+                                        <div class="column lg-6 tab-12 form-field">
+                                            <input name="cName" id="cName" class="u-fullwidth" placeholder="Votre nom"
+                                                value="" type="text">
+                                        </div>
+
+                                        <div class="column lg-6 tab-12 form-field">
+                                            <input name="cEmail" id="cEmail" class="u-fullwidth"
+                                                placeholder="Votre Prénom" value="" type="text">
+                                        </div>
+
+                                        <div class="column lg-12 form-field">
+                                            <input name="cWebsite" id="cWebsite" class="u-fullwidth"
+                                                placeholder="Website" value="" type="text">
+                                        </div>
+
+                                        <div class="column lg-12 form-field">
+                                            <input name="cWebsite" id="cWebsite" class="u-fullwidth"
+                                                placeholder="Website" value="" type="text">
+                                        </div>
+
+                                        <div class="column lg-12">
+                                            <input name="submit" id="submit"
+                                                class="btn btn--primary btn-wide btn--large u-fullwidth"
+                                                value="S'Inscrire" type="submit">
+                                        </div>
+
+                                    </fieldset>
+                                </form> <!-- end form -->
+
+
             </div> <!-- end bricks -->
+
+
 
         </section> <!-- end s-content -->
 
@@ -556,7 +593,7 @@
                         <li>
                             <a href="#0">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;">
+                                    style="fill: #000000;transform: ;msFilter:;">
                                     <path
                                         d="M12.001 2.002c-5.522 0-9.999 4.477-9.999 9.999 0 4.99 3.656 9.126 8.437 9.879v-6.988h-2.54v-2.891h2.54V9.798c0-2.508 1.493-3.891 3.776-3.891 1.094 0 2.24.195 2.24.195v2.459h-1.264c-1.24 0-1.628.772-1.628 1.563v1.875h2.771l-.443 2.891h-2.328v6.988C18.344 21.129 22 16.992 22 12.001c0-5.522-4.477-9.999-9.999-9.999z">
                                     </path>
@@ -578,7 +615,7 @@
                         <li>
                             <a href="#0">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    style="fill:rgba(0, 0, 0, 1);transform:;-ms-filter:">
+                                    style="fill:#000000;transform:;-ms-filter:">
                                     <path
                                         d="M11.999,7.377c-2.554,0-4.623,2.07-4.623,4.623c0,2.554,2.069,4.624,4.623,4.624c2.552,0,4.623-2.07,4.623-4.624 C16.622,9.447,14.551,7.377,11.999,7.377L11.999,7.377z M11.999,15.004c-1.659,0-3.004-1.345-3.004-3.003 c0-1.659,1.345-3.003,3.004-3.003s3.002,1.344,3.002,3.003C15.001,13.659,13.658,15.004,11.999,15.004L11.999,15.004z">
                                     </path>
@@ -593,7 +630,7 @@
                         <li>
                             <a href="#0">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;">
+                                    style="fill: #000000;transform: ;msFilter:;">
                                     <path
                                         d="M11.99 2C6.472 2 2 6.473 2 11.99c0 4.232 2.633 7.85 6.35 9.306-.088-.79-.166-2.006.034-2.868.182-.78 1.172-4.966 1.172-4.966s-.299-.599-.299-1.484c0-1.388.805-2.425 1.808-2.425.853 0 1.264.64 1.264 1.407 0 .858-.546 2.139-.827 3.327-.235.994.499 1.805 1.479 1.805 1.775 0 3.141-1.872 3.141-4.575 0-2.392-1.719-4.064-4.173-4.064-2.843 0-4.512 2.132-4.512 4.335 0 .858.331 1.779.744 2.28a.3.3 0 0 1 .069.286c-.076.315-.245.994-.277 1.133-.044.183-.145.222-.335.134-1.247-.581-2.027-2.405-2.027-3.871 0-3.151 2.289-6.045 6.601-6.045 3.466 0 6.159 2.469 6.159 5.77 0 3.444-2.171 6.213-5.184 6.213-1.013 0-1.964-.525-2.29-1.146l-.623 2.374c-.225.868-.834 1.956-1.241 2.62a10 10 0 0 0 2.958.445c5.517 0 9.99-4.473 9.99-9.99S17.507 2 11.99 2">
                                     </path>
@@ -630,6 +667,30 @@
         <!-- Java Script================================================== -->
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
+        <!-- <script type="text/javascript">
+            let widget = FedaPay.init({
+                public_key: 'pk_live_AVH-PrehePhF1peYp8Fb5SV_'
+            });
+            let btn = document.getElementById('pay-btn');
+            btn.addEventListener('click', () => {
+                widget.open();
+            });
+        </script>
+        
+        <script type="text/javascript">
+            FedaPay.init({
+                public_key: 'pk_live_AVH-PrehePhF1peYp8Fb5SV_',
+                transaction: {
+                    amount: 1000,
+                    description: 'Acheter mon produit'
+                },
+                customer: {
+                    email: 'johndoe@gmail.com',
+                    lastname: 'Doe',
+                },
+                container: '#embedd'
+            });
+        </script> -->
 
 </body>
 

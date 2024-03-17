@@ -20,7 +20,7 @@ app.use((req, res) => {
 });
 
 const ipAdress = "192.168.1.247";
-const port = 5000;
+const port = 500;
 const Port = process.env.PORT || 3000;
 
 app.listen(port, () => {
