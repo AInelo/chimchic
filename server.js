@@ -1,7 +1,12 @@
+// import express from 'express';
+// import path from "path"
+// Créer une application Express
+// const app = express();
 const express = require("express");
 const path = require("path");
-
-let initial_path = path.join(__dirname, "public");
+// let initial_path = new URL('.', import.meta.url).pathname;
+// initial_path = path.join(path.resolve(initial_path), "public");
+ let initial_path = path.join(__dirname, "public");
 
 const app = express();
 

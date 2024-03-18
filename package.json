@@ -2,7 +2,6 @@
   "name": "chimchic",
   "version": "1.0.0",
   "description": "",
-  "type": "module", 
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -17,6 +16,7 @@
     "nodemon": "^3.1.0"
   },
   "devDependencies": {
-    "@types/node": "^20.11.28"
+    "@types/node": "^20.11.28",
+    "webpack": "^5.90.3"
   }
 }
