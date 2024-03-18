@@ -11,6 +11,7 @@ const path = require("path");
 const app = express();
 
 app.use(express.static(initial_path));
+app.use(express.static(path.join(__dirname, 'dist')));
 
 // app.get('/', (req, res) => {
 //     res.sendFile(path.join(initial_path, "index.html"));
