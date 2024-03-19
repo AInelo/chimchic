@@ -29,8 +29,8 @@ const ipAdress = "192.168.1.247";
 const port = 500;
 const Port = process.env.PORT || 3000;
 
-app.listen(port, () => {
-  console.log(`Le serveur tourne aussi sur: http://localhost:${port} `);
+app.listen(Port, () => {
+  console.log(`Le serveur tourne aussi sur: http://localhost:${Port} `);
 
   // browserSync({
   //   proxy: `http://${ipAdress}:${Port}`,
