@@ -1,6 +1,7 @@
 btnPayment = document.getElementById("btnPayment");
 
-btnPayment.addEventListener("click", () => {
+btnPayment.addEventListener("click", (e) => {
+    
   // Supposons que vous utilisez fetch pour effectuer des requêtes HTTP, mais vous pouvez utiliser axios ou tout autre moyen que vous préférez
 
   // Créer une transaction
