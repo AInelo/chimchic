@@ -1,6 +1,40 @@
 btnPayment = document.getElementById("btnPayment");
-clientFirstname = document.getElementById("firstname");
-clientLastname = document.getElementById("lastname")
+BeforeClientFirstname = document.getElementById("clientFirstname");
+BeforeClientLastname = document.getElementById("clientLastname");
+BeforeClientNumber = document.getElementById("clientNumber");
+
+clientFirstname = BeforeClientFirstname.value;
+clientLastname = BeforeClientLastname.value;
+clientNumber = BeforeClientNumber.value;
+
+
+
+
+
+btnPayment.addEventListener("click", async (e) => {
+    try {
+        // Créer une transaction
+        console.log(clientNumber);
+        const transactionResponse = await axios.post("/payment/createtransaction", {
+            firstname: clientFirstname,
+            lastname: clientLastname,
+            number: clientNumber
+        });
+        const transactionId = transactionResponse.data.id;
+
+        // Générer le token pour la transaction créée
+        const tokenResponse = await axios.post("/payment/generate-token", { transactionId });
+        
+        // Rediriger l'utilisateur vers le lien de paiement avec le token généré
+        window.location.href = tokenResponse.data.token;
+    } catch (error) {
+        console.error("Erreur lors de la transaction :", error);
+        // Gérer les erreurs
+    }
+});
+
+
+
 
 // btnPayment.addEventListener("click", (e) => {
 //     // Créer une transaction
@@ -21,28 +55,6 @@ clientLastname = document.getElementById("lastname")
 //             // Gérer les erreurs
 //         });
 // });
-
-
-
-
-
-btnPayment.addEventListener("click", async (e) => {
-    try {
-        // Créer une transaction
-        const transactionResponse = await axios.post("/payment/createtransaction", {});
-        const transactionId = transactionResponse.data.id;
-
-        // Générer le token pour la transaction créée
-        const tokenResponse = await axios.post("/payment/generate-token", { transactionId });
-        
-        // Rediriger l'utilisateur vers le lien de paiement avec le token généré
-        window.location.href = tokenResponse.data.token;
-    } catch (error) {
-        console.error("Erreur lors de la transaction :", error);
-        // Gérer les erreurs
-    }
-});
-
 
 
 
