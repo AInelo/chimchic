@@ -31,9 +31,5 @@ async function createTransaction () {
 btnPayement = document.getElementById("btnPayement")
 
 btnPayement.addEventListener('click', async () => {
-   await createTransaction();
+    await createTransaction();
 });
-
-
-
-
