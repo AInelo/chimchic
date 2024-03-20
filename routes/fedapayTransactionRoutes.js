@@ -3,11 +3,15 @@ const router = express.Router();
 // const bcrypt = require('bcrypt');
 const  { 
     createFedaTransaction,
-    generateTokenTransaction } = require("../controllers/fedapayTransactionController")
+    generateTokenTransaction, 
+    callback} = require("../controllers/fedapayTransactionController")
 
-const { signUp, signIn } = require('../controllers/userController')
+// const { signUp, signIn } = require('../controllers/userController')
 
-router.route('/').post(createFedaTransaction)
+router.route('/createtransaction').post(createFedaTransaction);
 // router.route('/signin').post(signIn)
+router.route('/generate-token').post(generateTokenTransaction);
+
+router.route('/callback').get(callback)
 
 module.exports = router;

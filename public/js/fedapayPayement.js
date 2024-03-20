@@ -1,35 +1,43 @@
-// const {FedaPay, Transaction} = require('fedapay');
+btnPayment = document.getElementById("btnPayment");
 
-async function createTransaction () {
-    const {FedaPay, Transaction} = require('fedapay');
+btnPayment.addEventListener("click", () => {
+  // Supposons que vous utilisez fetch pour effectuer des requêtes HTTP, mais vous pouvez utiliser axios ou tout autre moyen que vous préférez
 
-    FedaPay.setApiKey('sk_live_CaZH-pW0S9lqhGldYsaQf0C2');
+  // Créer une transaction
+fetch("/createtransaction", {
+    method: "POST",
+    headers: {
+    "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      // Les données de la transaction, si nécessaire
+    }),
+})
+    .then((response) => response.json())
+    .then((transaction) => {
+      // Récupérer l'identifiant de la transaction créée
+    const transactionId = transaction.id;
 
-    FedaPay.setEnvironment('live');
-
-    const transaction = await Transaction.create({
-        descripition: "Frais de Formation CHIMCHIC",
-        amount: 2000,
-        callback_url: 'https://maplateforme.com/callback',
-        currency: {
-            iso: 'XOF'
+      // Générer le token pour la transaction créée
+    fetch("/generate-token", {
+        method: "POST",
+        headers: {
+        "Content-Type": "application/json",
         },
-        customer: {
-            firstname: "Lionel",
-            lastname: "TOTON",
-            email: "totonlionel@gmail.com",
-            phone_number: {
-                number: '96769716',
-                country: 'BJ'
-        }
-    }
-
-
+        body: JSON.stringify({ transactionId }),
     })
-}
-
-btnPayement = document.getElementById("btnPayement")
-
-btnPayement.addEventListener('click', async () => {
-    await createTransaction();
+        .then((response) => response.json())
+        .then((token) => {
+          // Rediriger l'utilisateur vers le lien de paiement avec le token généré
+        window.location.href = token.token;
+        })
+        .catch((error) => {
+        console.error("Erreur lors de la génération du token :", error);
+          // Gérer les erreurs
+        });
+    })
+    .catch((error) => {
+    console.error("Erreur lors de la création de la transaction :", error);
+      // Gérer les erreurs
+    });
 });
