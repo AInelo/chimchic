@@ -9,8 +9,8 @@ FedaPay.setEnvironment("live");
 const createFedaTransaction = async (req, res) => {
   try {
     const transaction = await Transaction.create({
-      description: "Description de la transaction",
-      amount: 2000,
+      description: "Les inscritptions de Formation ChimCHIC",
+      amount: 5000,
       currency: {
         iso: "XOF",
       },
