@@ -1,5 +1,6 @@
 btnPayment = document.getElementById("btnPayment");
-
+clientFirstname = document.getElementById("firstname");
+clientLastname = document.getElementById("lastname")
 
 // btnPayment.addEventListener("click", (e) => {
 //     // Créer une transaction
@@ -20,6 +21,7 @@ btnPayment = document.getElementById("btnPayment");
 //             // Gérer les erreurs
 //         });
 // });
+
 
 
 
