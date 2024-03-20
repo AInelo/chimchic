@@ -21,13 +21,13 @@ app.use("/payment" ,fedapayTransactionRoutes);
 //     res.sendFile(path.join(initial_path, "index.html"));
 // })
 
-app.use((req, res) => {
-  res.status(404).json("Not Found.");
-});
+// app.use((req, res) => {
+//   res.status(404).json("Not Found.");
+// });
 
-app.use((req, res) => {
-  res.json("404");
-});
+// app.use((req, res) => {
+//   res.json("404");
+// });
 
 const ipAdress = "192.168.1.247";
 const port = 500;

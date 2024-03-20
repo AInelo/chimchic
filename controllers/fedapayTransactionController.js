@@ -14,7 +14,7 @@ const createFedaTransaction = async (req, res) => {
       currency: {
         iso: "XOF",
       },
-      callback_url: "https://votresite.com/callback",
+      callback_url: "https://chat.whatsapp.com/CZG0kokqkja8ZaDVtlPOQL",
       customer: {
         firstname: "John",
         lastname: "Doe",
