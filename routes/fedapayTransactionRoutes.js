@@ -7,7 +7,7 @@ const  {
 
 const { signUp, signIn } = require('../controllers/userController')
 
-router.route('/createtransaction').post(createFedaTransaction)
+router.route('/').post(createFedaTransaction)
 // router.route('/signin').post(signIn)
 
 module.exports = router;

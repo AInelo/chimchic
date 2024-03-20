@@ -4,7 +4,7 @@
 // const app = express();
 const express = require("express");
 const path = require("path");
-const fedapayTransactionController = require('./controllers/fedapayTransactionController');
+const fedapayTransactionRoutes = require('./routes/fedapayTransactionRoutes');
 // let initial_path = new URL('.', import.meta.url).pathname;
 // initial_path = path.join(path.resolve(initial_path), "public");
 let initial_path = path.join(__dirname, "public");
@@ -13,7 +13,7 @@ const app = express();
 
 app.use(express.static(initial_path));
 app.use(express.static(path.join(__dirname, "dist")));
-app.use("/a" ,fedapayTransactionController);
+app.use("/createtransaction" ,fedapayTransactionRoutes);
 // app.get('/', (req, res) => {
 //     res.sendFile(path.join(initial_path, "index.html"));
 // })
