@@ -6,7 +6,7 @@ FedaPay.setApiKey("sk_live_CaZH-pW0S9lqhGldYsaQf0C2");
 
 FedaPay.setEnvironment("live");
 
-const createFedaTransaction = async (req, res) => {
+const createFedaTransaction0 = async (req, res) => {
   try {
     const { clientFirstname, clientLastname, clientNumber } = req.body;
     const transaction = await Transaction.create({
@@ -19,7 +19,7 @@ const createFedaTransaction = async (req, res) => {
       customer: {
         firstname: clientFirstname,
         lastname: clientLastname,
-        email: "john.doe@example.com",
+        email: "llal@gmail.com",
         phone_number: {
           number: clientNumber,
           country: "BJ",
@@ -36,6 +36,44 @@ const createFedaTransaction = async (req, res) => {
       .json({ error: "Erreur lors de la création de la transaction" });
   }
 };
+
+
+const createFedaTransaction = async (req, res) => {
+  try {
+    // Utilisation de la déstructuration pour obtenir les données de req.body
+    console.log(req.body)
+    // const { clientFirstname, clientLastname, clientNumber } = req.body;
+    const { firstname, lastname, number } = req.body;
+
+    // Création de la transaction avec les données fournies
+    const transaction = await Transaction.create({
+      description: "Les inscriptions de Formation ChimCHIC",
+      amount: 5000,
+      currency: {
+        iso: "XOF",
+      },
+      callback_url: "https://chat.whatsapp.com/CZG0kokqkja8ZaDVtlPOQL",
+      customer: {
+        firstname: firstname,
+        lastname: lastname,
+        email: "llal@gmail.com",
+        phone_number: {
+          number: number,
+          country: "BJ",
+        },
+      },
+    });
+
+    // Renvoi des données de la transaction créée
+    res.json(transaction);
+  } catch (error) {
+    console.error("Erreur lors de la création de la transaction : ", error);
+    res.status(500).json({ error: "Erreur lors de la création de la transaction" });
+  }
+};
+
+
+
 
 const generateTokenTransaction = async (req, res) => {
   try {
@@ -66,4 +104,36 @@ module.exports = {
   createFedaTransaction,
   generateTokenTransaction,
   callback,
+};
+
+
+const createFedaTransaction4 = async (req, res) => {
+  try {
+    const { clientFirstname, clientLastname, clientNumber } = req.body;
+    const transaction = await Transaction.create({
+      description: "Les inscritptions de Formation ChimCHIC",
+      amount: 5000,
+      currency: {
+        iso: "XOF",
+      },
+      callback_url: "https://chat.whatsapp.com/CZG0kokqkja8ZaDVtlPOQL",
+      customer: {
+        firstname: "clientFirstname",
+        lastname: "clientLastname",
+        email: "llal@gmail.com",
+        phone_number: {
+          number: "96769716",
+          country: "BJ",
+        },
+      },
+    });
+
+    // Renvoi des données de la transaction créer
+    res.json(transaction);
+  } catch (error) {
+    console.error("Erreur dlor de la création de la transaction : ", error);
+    res
+      .status(500)
+      .json({ error: "Erreur lors de la création de la transaction" });
+  }
 };

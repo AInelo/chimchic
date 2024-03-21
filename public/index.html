@@ -28,7 +28,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="./images/logochimchic.jpeg">
     <link rel="manifest" href="site.webmanifest">
     <!-- <script src="https://cdn.fedapay.com/checkout.js?v=1.1.7"></script> -->
-    
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 
 
@@ -487,16 +487,16 @@
                     </div>
                     <fieldset class="row">
                         <div class="column lg-6 tab-12 form-field">
-                            <input name="cName" id="clientFirstname" class="u-fullwidth" placeholder="Votre nom"
-                                value="" type="text">
+                            <input name="clientFirstname" id="clientFirstname" class="u-fullwidth" placeholder="Votre nom"
+                                type="text">
                         </div>
                         <div class="column lg-6 tab-12 form-field">
-                            <input name="cEmail" id="clientLastname" class="u-fullwidth"
-                                placeholder="Votre Prénom" value="" type="text">
+                            <input name="clientLastname" id="clientLastname" class="u-fullwidth"
+                                placeholder="Votre Prénom" type="text">
                         </div>
                         <div class="column lg-12 tab-12 form-field">
-                            <input name="cEmail" id="clientNumber" class="u-fullwidth"
-                                placeholder="Numéros de téléphone" value="" type="number">
+                            <input name="clientNumber" id="clientNumber" class="u-fullwidth"
+                                placeholder="Numéros de téléphone" type="number">
                         </div>
                         <div class="column lg-12">
                             <!-- <input   name="submit"
@@ -666,7 +666,7 @@
         </footer><!-- end s-footer -->
 
         <!-- Java Script================================================== -->
-        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        
 
         <script src="js/plugins.js"></script>
         <script src="js/fedapayPayement.js"></script>
