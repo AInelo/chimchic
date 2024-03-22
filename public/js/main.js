@@ -8,7 +8,7 @@
     'use strict';
 
 
-   /* preloader
+/* preloader
     * -------------------------------------------------- */
     const ssPreloader = function() {
 
@@ -34,7 +34,7 @@
     }; // end ssPreloader
 
 
-   /* mobile menu
+/* mobile menu
     * ---------------------------------------------------- */ 
     const ssMobileMenu = function() {
 

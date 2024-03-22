@@ -1,12 +1,14 @@
 // const express = require("express");
 const bodyParser = require('body-parser');
 const { FedaPay, Transaction } = require("fedapay");
+const asyncWrapper = require('../middleware/async');
 
 FedaPay.setApiKey("sk_live_CaZH-pW0S9lqhGldYsaQf0C2");
 
 FedaPay.setEnvironment("live");
 
-const createFedaTransaction0 = async (req, res) => {
+
+const createFedaTransaction = asyncWrapper(async (req, res) => {
   try {
     const { clientFirstname, clientLastname, clientNumber } = req.body;
     const transaction = await Transaction.create({
@@ -17,11 +19,11 @@ const createFedaTransaction0 = async (req, res) => {
       },
       callback_url: "https://chat.whatsapp.com/CZG0kokqkja8ZaDVtlPOQL",
       customer: {
-        firstname: clientFirstname,
-        lastname: clientLastname,
+        firstname: "lionel",
+        lastname: "faocon",
         email: "llal@gmail.com",
         phone_number: {
-          number: clientNumber,
+          number: "96769716",
           country: "BJ",
         },
       },
@@ -35,10 +37,10 @@ const createFedaTransaction0 = async (req, res) => {
       .status(500)
       .json({ error: "Erreur lors de la création de la transaction" });
   }
-};
+});
 
 
-const createFedaTransaction = async (req, res) => {
+const createFedaTransaction0 = asyncWrapper(async (req, res) => {
   try {
     // Utilisation de la déstructuration pour obtenir les données de req.body
     console.log(req.body)
@@ -70,7 +72,7 @@ const createFedaTransaction = async (req, res) => {
     console.error("Erreur lors de la création de la transaction : ", error);
     res.status(500).json({ error: "Erreur lors de la création de la transaction" });
   }
-};
+});
 
 
 
