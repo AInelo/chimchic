@@ -14,7 +14,7 @@ btnPayment.addEventListener("click", async (e) => {
     const clientNumber = BeforeClientNumber.value;
 
     // Créer une transaction
-    console.log(clientNumber);
+    console.log(clientFirstname + clientLastname + clientNumber);
     const transactionResponse = await axios.post(
       "/payment/createtransaction",
       {

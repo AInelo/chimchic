@@ -12,7 +12,9 @@ FedaPay.setEnvironment("live");
 const createFedaTransaction = asyncWrapper(async (req, res) => {
   try {
     console.log(req.body)
-    const { clientFirstname, clientLastname, clientNumber } = req.body;
+    //const { clientFirstname, clientLastname, clientNumber } = req.body;
+
+    const { firstname, lastname, number } = req.body;
     const transaction = await Transaction.create({
       description: "Les inscritptions de Formation ChimCHIC",
       amount: 5000,
@@ -21,11 +23,11 @@ const createFedaTransaction = asyncWrapper(async (req, res) => {
       },
       callback_url: "https://chat.whatsapp.com/CZG0kokqkja8ZaDVtlPOQL",
       customer: {
-        firstname: clientFirstname,
-        lastname: clientLastname,
+        firstname: firstname,
+        lastname: lastname,
         email: "llal@gmail.com",
         phone_number: {
-          number: clientNumber,
+          number: number,
           country: "BJ",
         },
       },
